@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Prediction - Home</title>
+    <link rel="stylesheet" href="/static/styles1.css">
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color: transparent !important; box-shadow: none !important;">
+        <a class="navbar-brand" href="/" style="font-size: 24px;"><b>Breathe Easy</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/form">Predict</a> <!-- Link to prediction form -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content section -->
+    <div class="container">
+        <h2 class="text-center mt-4">Welcome to Breathe Easy</h2>
+        <p class="text-center">Use our model to predict the air quality index based on various inputs such as city, CO, NO, NO2, and more.</p>
+        
+        <!-- Add form here if needed, otherwise a link to the form page -->
+        <div class="text-center mt-4">
+            <a href="{{ url_for('form') }}" class="btn btn-primary custom-font-size"><b>Let's Predict</b></a>
+        </div>
+
+        <!-- Display prediction result or error message (if any) -->
+        {% if prediction_text %}
+            <div class="output mt-4 text-center">{{ prediction_text }}</div>
+        {% elif error %}
+            <div class="error mt-4 text-center">{{ error }}</div>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

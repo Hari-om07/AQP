@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>    
+</head>
+<body>
+<main>
+    <center><h2>Air Quality Prediction</h2></center>
+    <form id="predictionForm" action="{{ url_for('predict') }}" method="POST">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="city">City:</label>
+                <select id="city" name="city" required>
+                    <!-- Options for cities -->
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Aizawl">Aizawl</option>
+                    <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                    <option value="Talcher">Talcher</option>
+                    <option value="Shillong">Shillong</option>
+                    <option value="Patna">Patna</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Jorapokhar">Jorapokhar</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Guwahati">Guwahati</option>
+                    <option value="Gurugram">Gurugram</option>
+                    <option value="Ernakulam">Ernakulam</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Brajrajnagar">Brajrajnagar</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Amritsar">Amritsar</option>
+                    <option value="Amaravati">Amaravati</option>
+                    <option value="Visakhapatnam">Visakhapatnam</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" min="2020-01-01" max="2023-12-31" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="co">Carbon Monoxide (CO):</label>
+                <input type="number" step="any" id="co" name="co" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="no">Nitric Oxide (NO):</label>
+                <input type="number" step="any" id="no" name="no" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="no2">Nitrogen Dioxide (NO2):</label>
+                <input type="number" step="any" id="no2" name="no2" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="o3">Ozone (O3):</label>
+                <input type="number" step="any" id="o3" name="o3" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="so2">Sulfur Dioxide (SO2):</label>
+                <input type="number" step="any" id="so2" name="so2" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="pm2_5">Particulate Matter with a diameter < 2.5 µm (PM2.5):</label>
+                <input type="number" step="any" id="pm2_5" name="pm2_5" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="pm10">Particulate Matter with a diameter < 10 µm (PM10):</label>
+                <input type="number" step="any" id="pm10" name="pm10" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="nh3">Ammonia (NH3): </label>
+                <input type="number" step="any" id="nh3" name="nh3" required>
+            </div>
+        </div>
+        
+        <!-- Submit button -->
+        <div class="button-container">
+            <button type="submit"><b>Predict</b></button>
+        </div>
+    </form>
+        
+
+    
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+    <!-- Display Error Message if Available -->
+    {% if error %}
+        <h2 style="color: red;">{{ error }}</h2>
+    {% endif %}
+</body>
+</html>
