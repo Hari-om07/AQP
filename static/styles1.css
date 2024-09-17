@@ -126,3 +126,31 @@ a:hover {
     margin-top: 20px;
     display: inline-block;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-item {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .header-section {
+        height: 60vh;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
