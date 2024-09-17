@@ -8,7 +8,7 @@ import numpy as np
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
 # Load dataset
-df = pd.read_csv(r'D:\MSC DSAI\Python\Project\air_pollution_data.csv')
+df = pd.read_csv('data/air_pollution_data.csv')
 
 # Load the pickled model
 rf_model = pk.load(open(r'D:\MSC DSAI\Python\Project\rf.pkl', 'rb'))
