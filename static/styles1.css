@@ -129,28 +129,81 @@ a:hover {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .navbar-brand {
-        font-size: 20px;
-    }
-
-    .navbar-nav {
-        text-align: center;
+    .navbar {
+        padding: 5px 0;
     }
 
     .nav-item {
         display: block;
-        padding: 10px 0;
+        padding: 10px;
+        font-size: 18px;
     }
 
     .header-section {
         height: 60vh;
     }
 
+    .overlay {
+        padding: 10px;
+    }
+
     .title {
-        font-size: 1.8rem;
+        font-size: 30px;
     }
 
     .subtitle {
-        font-size: 1rem;
+        font-size: 18px;
+    }
+
+    .btn.btn-primary {
+        font-size: 18px;
+        padding: 8px 16px;
+        position: static;
+        margin-top: 20px;
+    }
+
+    .main-content {
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .learn-more {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 3px 0;
+    }
+
+    .nav-item {
+        font-size: 16px;
+    }
+
+    .header-section {
+        height: 50vh;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .btn.btn-primary {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    .main-content {
+        padding: 5px;
+        margin: 10px auto;
+    }
+
+    .learn-more {
+        font-size: 14px;
     }
 }
