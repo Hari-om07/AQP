@@ -83,22 +83,29 @@ select {
 }
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .navbar-brand {
-        font-size: 20px;
-    }
-
-    .navbar-nav {
-        text-align: center;
-    }
-
-    .nav-item {
-        display: block;
-        padding: 10px 0;
-    }
-
     .form-container {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+
+    form {
+        padding: 15px;
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .button-container button {
+        font-size: 18px; /* Slightly smaller font size */
+        padding: 8px 12px; /* Adjusted padding */
+    }
+}
+
+@media (max-width: 480px) {
+    form {
         padding: 10px;
-        margin: 60px auto; /* Adjust margin for mobile */
+    }
+
+    .button-container button {
+        font-size: 16px; /* Further reduced font size */
+        padding: 6px 10px; /* Further adjusted padding */
     }
 }
 
