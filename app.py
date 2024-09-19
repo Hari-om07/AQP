@@ -64,7 +64,7 @@ def predict():
 
             # Parse and validate date
             date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-            if date_obj.year < 2020 or date_obj.year > 2023:
+            if date_obj.year < 2020 or date_obj.year > 2030:
                 error = 'Date must be between the years 2020 and 2023'
                 return render_template('form.html', error=error)
             
